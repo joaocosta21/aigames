@@ -3,7 +3,7 @@ from IPython import display
 
 plt.ion()
 
-def plot(scores, mean_scores):
+def plot(scores, mean_scores, games):
     display.clear_output(wait=True)
     display.display(plt.gcf())
     plt.clf()
@@ -16,4 +16,6 @@ def plot(scores, mean_scores):
     plt.text(len(scores)-1, scores[-1], str(scores[-1]))
     plt.text(len(mean_scores)-1, mean_scores[-1], str(mean_scores[-1]))
     plt.show(block=False)
+    if games == 150:
+        plt.savefig('print1.png')
     plt.pause(.1)
