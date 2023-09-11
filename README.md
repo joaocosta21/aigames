@@ -1,2 +1,2 @@
 # aigames
-    to-do bigger eye range
+    to-do bigger eye range on snake
