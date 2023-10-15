@@ -10,3 +10,10 @@ X = torch.from_numpy(X_numpy.astype(np.float32))
 y = torch.from_numpy(y_numpy.astype(np.float32))
 y = y.view(y.shape[0], 1)
 
+n_samples, n_features = X.shape
+
+input_size = n_features
+output_size = 1
+model = nn.Linear(input_size, output_size)
+
+
