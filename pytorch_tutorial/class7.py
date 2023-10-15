@@ -22,3 +22,20 @@ learning_rate = 0.01
 criterion = nn.MSELoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)  
 
+num_epochs = 100
+for epoch in range(num_epochs):
+    # Forward pass and loss
+    y_predicted = model(X)
+    loss = criterion(y_predicted, y)
+    
+    # Backward pass and update
+    loss.backward()
+    optimizer.step()
+
+    # zero grad before new step
+    optimizer.zero_grad()
+
+    if (epoch+1) % 10 == 0:
+        print(f'epoch: {epoch+1}, loss = {loss.item():.4f}')
+        
+predicted = model(X).detach().numpy()
