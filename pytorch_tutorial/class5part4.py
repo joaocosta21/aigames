@@ -16,16 +16,16 @@ oupu_size = n_features
 
 #model = nn.Linear(input_size, oupu_size)
 
-class LinearRregression(nn.Module):
+class LinearRegression(nn.Module):
     
     def __init__(self,input,output) -> None:
-        super(LinearRregression, self).__init__()
+        super(LinearRegression, self).__init__()
         self.lin = nn.Linear(input,output)
         
     def forward(self, x):
         return self.lin(x)
     
-model = LinearRregression(input_size, oupu_size)
+model = LinearRegression(input_size, oupu_size)
 
 print(f'Prediction before training: f(5) = {model(X_test).item():.3f}')
 
